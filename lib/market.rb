@@ -18,12 +18,6 @@ class Market
   end
 
   def vendors_that_sell(item)
-    # vendor_list = []
-    # @vendors.each do |vendor|
-    #  vendor_list << vendor if vendor.inventory.include?(item)
-    # binding.pry
-    # end
-    # vendor_list
     @vendors.select do |vendor|
       vendor.inventory.keys.include?(item)
     end
