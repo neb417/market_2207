@@ -47,7 +47,7 @@ RSpec.describe Vendor do
       let(:item3) {Item.new({name: 'Peach-Raspberry Nice Cream', price: '$5.30'})}
       let(:item4) {Item.new({name: 'Banana Nice Cream', price: '$4.25'})}
 
-      xit 'Vendor has potential revenue' do
+      it 'Vendor has potential revenue' do
         vendor1.stock(item1, 35)
         vendor1.stock(item2, 7)
         vendor2.stock(item4, 50)

@@ -19,12 +19,12 @@ RSpec.describe Market do
       expect(market).to be_a(Market)
     end
 
-    xit 'Market has attributes' do
+    it 'Market has attributes' do
       expect(market.name).to eq('South Pearl Street Farmers Market')
       expect(market.vendors).to eq([])
     end
 
-    xit 'Market can add Vendors' do
+    it 'Market can add Vendors' do
       market.add_vendor(vendor1)
       market.add_vendor(vendor2)
       market.add_vendor(vendor3)
@@ -32,7 +32,7 @@ RSpec.describe Market do
       expect(market.vendors).to eq([vendor1, vendor2, vendor3])
     end
 
-    xit 'Market Vendors hav names' do
+    it 'Market Vendors hav names' do
       market.add_vendor(vendor1)
       market.add_vendor(vendor2)
       market.add_vendor(vendor3)
@@ -40,7 +40,7 @@ RSpec.describe Market do
       expect(market.vendors_names).to eq(['Rocky Mountain Fresh', 'Ba-Nom-a-Nom', 'Palisade Peach Shack'])
     end
 
-    xit 'Market finds which Vendors sells which Items' do
+    it 'Market finds which Vendors sells which Items' do
       market.add_vendor(vendor1)
       market.add_vendor(vendor2)
       market.add_vendor(vendor3)

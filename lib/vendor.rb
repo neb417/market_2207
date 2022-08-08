@@ -1,3 +1,4 @@
+require 'pry'
 class Vendor
   attr_reader :name, :inventory
 
@@ -12,5 +13,11 @@ class Vendor
 
   def stock(item, qty)
     @inventory[item] += qty
+  end
+
+  def potential_revenue
+    @inventory.sum do |item, qty|
+      item.price.delete("$").to_f * qty
+    end
   end
 end
