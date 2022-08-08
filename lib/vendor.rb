@@ -17,7 +17,7 @@ class Vendor
 
   def potential_revenue
     @inventory.sum do |item, qty|
-      item.price.delete("$").to_f * qty
+      item.price.delete('$').to_f * qty
     end
   end
 end
