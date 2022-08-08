@@ -63,35 +63,28 @@ RSpec.describe Market do
   
         vendor1.stock(item1, 35)
         vendor1.stock(item2, 7)
-        vendor2.stock(item4, 50)
         vendor2.stock(item3, 25)
+        vendor2.stock(item4, 50)
         vendor3.stock(item1, 65)
         vendor3.stock(item3, 10)
       end
 
-      xit 'Market calculate total inventory of Items' do
-# total_inventory that reports the quantities of all items sold 
-# at the market. Specifically, it should return a hash with items as keys
-# and hash as values - this sub-hash should have two key/value pairs: 
-# quantity pointing to total inventory for that item and vendors pointing 
-# to an array of the vendors that sell that item.
+      it 'Market calculate total inventory of Items' do
         expected_hash = {item1 => {quantity: 100, vendors: [vendor1, vendor3]},
                         item2 => {quantity: 7, vendors: [vendor1]},
-                        item3 => {quantity: 50, vendors: [vendor2, vendor3]},
-                        item4 => {quantity: 35, vendors: [vendor2]}
+                        item3 => {quantity: 35, vendors: [vendor2, vendor3]},
+                        item4 => {quantity: 50, vendors: [vendor2]}
                         }
         expect(market.total_inventory).to eq(expected_hash)
       end
 
-      xit 'Market can determine overstocked items' do
+      it 'Market can determine overstocked items' do
 # An item is overstocked if it is 
 # sold by more than 1 vendor AND the total quantity is greater than 50.
         expect(market.overstocked_items).to eq([item1])
       end
 
-      xit 'Market can have sorted list of Items' do
-# returns a list of names of all items the Vendors have in stock, 
-# sorted alphabetically. This list should not include any duplicate items.
+      it 'Market can have sorted list of Items' do
         expect(market.sorted_item_list).to eq(["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"])
       end
     end
