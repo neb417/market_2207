@@ -18,5 +18,4 @@ RSpec.describe Item do
       expect(item2.price).to eq('$0.50')  
     end
   end
-  
 end
